@@ -5,6 +5,10 @@ This project meets all of the neccessary requirements for the assignment
 ## How to Run
 
 ```bash
+npm install
+```
+
+```bash
 npm start
 ```
 
