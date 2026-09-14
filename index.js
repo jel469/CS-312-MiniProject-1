@@ -1,3 +1,4 @@
+// Required modules
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
@@ -16,10 +17,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
+// home
 app.get("/", (req, res) => {
   res.render("index", { posts });
 });
 
+// post routes
 app.post("/posts", (req, res) => {
   const { author, title, content } = req.body;
 
@@ -75,6 +78,7 @@ app.delete("/posts/:id", (req, res) => {
   res.redirect("/");
 });
 
+// listening port
 app.listen(PORT, () => {
   console.log(`Blog app running at http://localhost:${PORT}`);
 });

@@ -1,17 +1,17 @@
 :root {
-  --ink: #2c2340;
-  --muted: #625a7a;
-  --paper: #f7f3ff;
-  --surface: rgba(255, 255, 255, 0.76);
-  --accent: #8b5cf6;
-  --accent-hover: #7347d8;
-  --danger: #b55f7d;
-  --danger-hover: #964765;
-  --line: rgba(70, 54, 108, 0.14);
-  --shadow: 0 14px 42px rgba(103, 78, 156, 0.12);
-  --radius: 14px;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Manrope", system-ui, sans-serif;
+  --ink: #1f1b2e;
+  --muted: #67627d;
+  --paper: #f8f7fb;
+  --surface: rgba(255, 255, 255, 0.82);
+  --accent: #7c6ae6;
+  --accent-hover: #6652d3;
+  --danger: #d06a7d;
+  --danger-hover: #b75368;
+  --line: rgba(31, 27, 46, 0.08);
+  --shadow: 0 12px 30px rgba(77, 65, 112, 0.08);
+  --radius: 16px;
+  --font-display: "Montserrat", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
 }
 
 *,
@@ -30,10 +30,9 @@ body {
   font-family: var(--font-body);
   color: var(--ink);
   background:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(199, 178, 253, 0.9) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 45% at 100% 0%, rgba(233, 214, 255, 0.9) 0%, transparent 50%),
-    linear-gradient(165deg, #f5f1ff 0%, #efe7ff 42%, #e7ddff 100%);
-  line-height: 1.55;
+    radial-gradient(circle at top left, rgba(164, 145, 255, 0.18), transparent 30%),
+    linear-gradient(180deg, #f6f4fb 0%, #f1effa 100%);
+  line-height: 1.6;
 }
 
 .page {
@@ -62,10 +61,10 @@ body {
 .brand {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 7vw, 3.4rem);
+  font-size: clamp(2.2rem, 6vw, 3.1rem);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  letter-spacing: -0.06em;
+  line-height: 1.08;
   color: var(--ink);
 }
 
@@ -81,7 +80,7 @@ body {
 .tagline {
   margin: 0.65rem 0 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
 }
 
@@ -105,7 +104,7 @@ h1,
 h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   margin: 0 0 1rem;
 }
 
@@ -177,6 +176,7 @@ textarea {
 }
 
 .btn {
+  /* Rounded pill buttons keep the interface feeling modern and uncluttered. */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -196,10 +196,12 @@ textarea {
 }
 
 .btn:active {
+  /* Gives the button a quick pressed feel when clicked. */
   transform: scale(0.98);
 }
 
 .btn-primary {
+  /* Primary purple action button for publish/save actions. */
   background: var(--accent);
   color: #fff;
   align-self: flex-start;
@@ -210,33 +212,37 @@ textarea {
 }
 
 .btn-ghost {
+  /* Minimal secondary button with a subtle border to stay simple and uncluttered. */
   background: transparent;
   color: var(--accent);
-  border-color: rgba(26, 107, 92, 0.35);
+  border-color: rgba(124, 106, 230, 0.28);
 }
 
 .btn-ghost:hover {
-  background: rgba(26, 107, 92, 0.08);
+  background: rgba(124, 106, 230, 0.06);
 }
 
 .btn-danger {
+  /* Soft danger styling, still minimal and readable. */
   background: transparent;
   color: var(--danger);
-  border-color: rgba(155, 58, 58, 0.35);
+  border-color: rgba(208, 106, 125, 0.25);
 }
 
 .btn-danger:hover {
-  background: rgba(155, 58, 58, 0.08);
+  background: rgba(208, 106, 125, 0.06);
   border-color: var(--danger);
 }
 
 .empty-state {
+  /* Styles the no-posts message so it looks intentional and softer than normal text. */
   margin: 0;
   color: var(--muted);
   font-style: italic;
 }
 
 .post-list {
+  /* Removes default list styling and arranges posts in a vertical stack. */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -246,17 +252,20 @@ textarea {
 }
 
 .post {
+  /* Each post is separated by a border and animates in when it appears. */
   border-top: 1px solid var(--line);
   padding-top: 1.15rem;
   animation: post-in 0.4s ease-out both;
 }
 
 .post:first-child {
+  /* Removes the separator above the first post for a cleaner layout. */
   border-top: none;
   padding-top: 0;
 }
 
 @keyframes post-in {
+  /* Intro animation for new posts, creating a subtle fade/slide effect. */
   from {
     opacity: 0;
     transform: translateY(8px);
@@ -268,46 +277,54 @@ textarea {
 }
 
 .post-title {
+  /* Slightly bolder post titles for readability without making the layout too ornate. */
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin: 0 0 0.35rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
 }
 
 .post-meta {
+  /* Small metadata line showing author and timestamp. */
   margin: 0 0 0.85rem;
   font-size: 0.88rem;
   color: var(--muted);
 }
 
 .post-author {
+  /* Highlights the post author name for emphasis. */
   font-weight: 600;
   color: var(--accent);
 }
 
 .meta-sep {
+  /* Adds spacing around the dot separator between author and date. */
   margin: 0 0.3rem;
 }
 
 .post-content {
+  /* Keeps post text readable and preserves line breaks from the textarea. */
   margin: 0 0 1rem;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
 .post-actions {
+  /* Keeps edit/delete controls grouped together with spacing. */
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .inline-form {
+  /* Makes the delete form sit inline with the edit button. */
   display: inline;
   margin: 0;
 }
 
 .site-footer {
+  /* Footer styling for the app credit line. */
   margin-top: 2.5rem;
   text-align: center;
   color: var(--muted);
@@ -315,10 +332,12 @@ textarea {
 }
 
 .site-footer p {
+  /* Removes default paragraph spacing for a tighter footer layout. */
   margin: 0;
 }
 
 @media (min-width: 640px) {
+  /* Larger screens get slightly more breathing room around the form and feed cards. */
   .compose,
   .feed {
     padding: 1.85rem 1.75rem;
@@ -326,17 +345,5 @@ textarea {
 
   .page {
     padding-top: 3.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .btn {
-    width: 100%;
-  }
-
-  .form-actions .btn,
-  .post-actions .btn {
-    width: auto;
-    flex: 1 1 auto;
   }
 }

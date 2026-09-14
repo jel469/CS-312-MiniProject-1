@@ -1,5 +1,5 @@
 {
-  "name": "field-notes-blog",
+  "name": "blog",
   "version": "1.0.0",
   "description": "Basic blog web app w/ Node.js, Express, and EJS",
   "main": "index.js",
