@@ -1,0 +1,18 @@
+{
+  "name": "field-notes-blog",
+  "version": "1.0.0",
+  "description": "Basic blog web app w/ Node.js, Express, and EJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": ["blog", "express", "ejs"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "method-override": "^3.0.0"
+  }
+}
