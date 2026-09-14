@@ -15,16 +15,15 @@
   <body>
     <div class="page">
       <header class="site-header">
-        <p class="brand"><a href="/">Field Notes</a></p>
-        <p class="tagline">Editing an existing post</p>
+        <p class="brand"><a href="/">Editing Section</a></p>
       </header>
 
       <main>
         <section class="compose" aria-labelledby="edit-heading">
-          <h1 id="edit-heading">Edit post</h1>
           <p class="edit-meta">
             Originally posted <time><%= post.createdAt %></time>
           </p>
+
           <form
             action="/posts/<%= post.id %>?_method=PUT"
             method="POST"
@@ -65,7 +64,7 @@
       </main>
 
       <footer class="site-footer">
-        <p>© Jeremiah Lopez - CS312 Mini Project 1</p>
+        <p>© Jeremiah Lopez - CS312</p>
       </footer>
     </div>
   </body>

@@ -77,13 +77,6 @@ body {
   color: var(--accent);
 }
 
-.tagline {
-  margin: 0.65rem 0 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
 main {
   display: flex;
   flex-direction: column;

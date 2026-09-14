@@ -1,4 +1,4 @@
-// Required modules
+// Required modules, npm install is used to install them if not already installed
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
@@ -12,12 +12,12 @@ let nextId = 1;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 
-// home
+
+// home route
 app.get("/", (req, res) => {
   res.render("index", { posts });
 });
@@ -41,6 +41,7 @@ app.post("/posts", (req, res) => {
   res.redirect("/");
 });
 
+// edit / delete routes
 app.get("/posts/:id/edit", (req, res) => {
   const post = posts.find((p) => p.id === Number(req.params.id));
   if (!post) {
@@ -56,12 +57,10 @@ app.put("/posts/:id", (req, res) => {
   if (index === -1) {
     return res.redirect("/");
   }
-
   const { author, title, content } = req.body;
   if (!author?.trim() || !title?.trim() || !content?.trim()) {
     return res.redirect(`/posts/${id}/edit`);
   }
-
   posts[index] = {
     ...posts[index],
     author: author.trim(),
