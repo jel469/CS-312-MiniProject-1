@@ -176,7 +176,6 @@ textarea {
 }
 
 .btn {
-  /* Rounded pill buttons keep the interface feeling modern and uncluttered. */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -196,12 +195,10 @@ textarea {
 }
 
 .btn:active {
-  /* Gives the button a quick pressed feel when clicked. */
   transform: scale(0.98);
 }
 
 .btn-primary {
-  /* Primary purple action button for publish/save actions. */
   background: var(--accent);
   color: #fff;
   align-self: flex-start;
@@ -212,7 +209,6 @@ textarea {
 }
 
 .btn-ghost {
-  /* Minimal secondary button with a subtle border to stay simple and uncluttered. */
   background: transparent;
   color: var(--accent);
   border-color: rgba(124, 106, 230, 0.28);
@@ -223,7 +219,6 @@ textarea {
 }
 
 .btn-danger {
-  /* Soft danger styling, still minimal and readable. */
   background: transparent;
   color: var(--danger);
   border-color: rgba(208, 106, 125, 0.25);
@@ -235,14 +230,12 @@ textarea {
 }
 
 .empty-state {
-  /* Styles the no-posts message so it looks intentional and softer than normal text. */
   margin: 0;
   color: var(--muted);
   font-style: italic;
 }
 
 .post-list {
-  /* Removes default list styling and arranges posts in a vertical stack. */
   list-style: none;
   margin: 0;
   padding: 0;
@@ -252,20 +245,17 @@ textarea {
 }
 
 .post {
-  /* Each post is separated by a border and animates in when it appears. */
   border-top: 1px solid var(--line);
   padding-top: 1.15rem;
   animation: post-in 0.4s ease-out both;
 }
 
 .post:first-child {
-  /* Removes the separator above the first post for a cleaner layout. */
   border-top: none;
   padding-top: 0;
 }
 
 @keyframes post-in {
-  /* Intro animation for new posts, creating a subtle fade/slide effect. */
   from {
     opacity: 0;
     transform: translateY(8px);
@@ -277,7 +267,6 @@ textarea {
 }
 
 .post-title {
-  /* Slightly bolder post titles for readability without making the layout too ornate. */
   font-family: var(--font-display);
   font-size: 1.3rem;
   font-weight: 700;
@@ -286,45 +275,38 @@ textarea {
 }
 
 .post-meta {
-  /* Small metadata line showing author and timestamp. */
   margin: 0 0 0.85rem;
   font-size: 0.88rem;
   color: var(--muted);
 }
 
 .post-author {
-  /* Highlights the post author name for emphasis. */
   font-weight: 600;
   color: var(--accent);
 }
 
 .meta-sep {
-  /* Adds spacing around the dot separator between author and date. */
   margin: 0 0.3rem;
 }
 
 .post-content {
-  /* Keeps post text readable and preserves line breaks from the textarea. */
   margin: 0 0 1rem;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 
 .post-actions {
-  /* Keeps edit/delete controls grouped together with spacing. */
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
 .inline-form {
-  /* Makes the delete form sit inline with the edit button. */
   display: inline;
   margin: 0;
 }
 
 .site-footer {
-  /* Footer styling for the app credit line. */
   margin-top: 2.5rem;
   text-align: center;
   color: var(--muted);
@@ -332,12 +314,10 @@ textarea {
 }
 
 .site-footer p {
-  /* Removes default paragraph spacing for a tighter footer layout. */
   margin: 0;
 }
 
 @media (min-width: 640px) {
-  /* Larger screens get slightly more breathing room around the form and feed cards. */
   .compose,
   .feed {
     padding: 1.85rem 1.75rem;
