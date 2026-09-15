@@ -8,19 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
     <div class="page">
-      <header class="site-header">
+      <header class="header">
         <p class="brand">Blog Posting Site</p>
       </header>  
       <main>
-        <section class="compose" aria-labelledby="compose-heading">
-          <h1 id="compose-heading">New post</h1>
+        <section class="compose">
+          <h1 id="">New post</h1>
           <form action="/posts" method="POST" class="post-form">
             <div class="form-row">
               <label for="author">Your name</label>
@@ -29,7 +28,6 @@
                 id="author"
                 name="author"
                 required
-                maxlength="80"
                 placeholder="John Doe"
                 autocomplete="name"
               />
@@ -41,7 +39,6 @@
                 id="title"
                 name="title"
                 required
-                maxlength="120"
                 placeholder="My thoughts on.."
               />
             </div>
@@ -59,37 +56,34 @@
           </form>
         </section>
 
-        <section class="feed" aria-labelledby="feed-heading">
-          <h2 id="feed-heading">
+        <section class="feed">
+          <h2 id="">
             <%= posts.length === 1 ? "1 post" : posts.length + " posts" %>
           </h2>
-
           <% if (posts.length === 0) { %>
-          <p class="empty-state">No posts yet — write the first one above.</p>
+          <p class="emptystate">No posts yet — write the first one above.</p>
           <% } else { %>
-          <ul class="post-list">
+          <ul class="postlist">
             <% posts.forEach(function (post) { %>
             <li class="post">
               <article>
                 <header class="post-header">
                   <h3 class="post-title"><%= post.title %></h3>
-                  <p class="post-meta">
+                  <p class="postmeta">
                     <span class="post-author"><%= post.author %></span>
-                    <span class="meta-sep" aria-hidden="true">·</span>
+                    <span class="" aria-hidden="true">·</span>
                     <time><%= post.createdAt %></time>
                   </p>
                 </header>
                 <p class="post-content"><%= post.content %></p>
                 <div class="post-actions">
                   <a href="/posts/<%= post.id %>/edit" class="btn btn-ghost"
-                    >Edit</a
-                  >
+                    >Edit</a>
                   <form
                     action="/posts/<%= post.id %>?_method=DELETE"
                     method="POST"
                     class="inline-form"
-                    onsubmit="return confirm('Delete this post?');"
-                  >
+                    onsubmit="return confirm('Delete this post?');">
                     <button type="submit" class="btn btn-danger">Delete</button>
                   </form>
                 </div>
@@ -102,7 +96,7 @@
       </main>
 
       
-      <footer class="site-footer">
+      <footer class="footer">
         <p>© Jeremiah Lopez - CS312</p>
       </footer>
     </div>

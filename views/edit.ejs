@@ -3,32 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit — <%= post.title %> · Field Notes</title>
+    <title>Edit — <%= post.title %> Blog Posting Site</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
+
   <body>
     <div class="page">
-      <header class="site-header">
+      <header class="header">
         <p class="brand"><a href="/">Editing Section</a></p>
       </header>
-
       <main>
-        <section class="compose" aria-labelledby="edit-heading">
-          <p class="edit-meta">
-            Originally posted <time><%= post.createdAt %></time>
+        <section class="compose">
+          <p class="compose-meta">
+            Originally posted on <time><%= post.createdAt %></time>
           </p>
-
           <form
             action="/posts/<%= post.id %>?_method=PUT"
             method="POST"
-            class="post-form"
-          >
+            class="post-form">
             <div class="form-row">
               <label for="author">Your name</label>
               <input
@@ -36,7 +33,6 @@
                 id="author"
                 name="author"
                 required
-                maxlength="80"
                 value="<%= post.author %>"
               />
             </div>
@@ -47,7 +43,6 @@
                 id="title"
                 name="title"
                 required
-                maxlength="120"
                 value="<%= post.title %>"
               />
             </div>
@@ -62,8 +57,8 @@
           </form>
         </section>
       </main>
-
-      <footer class="site-footer">
+      
+      <footer class="footer">
         <p>© Jeremiah Lopez - CS312</p>
       </footer>
     </div>
