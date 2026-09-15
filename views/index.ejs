@@ -15,7 +15,7 @@
   <body>
     <div class="page">
       <header class="header">
-        <p class="brand">Blog Posting Site</p>
+        <p class="sitename">Blog Posting Site</p>
       </header>  
       <main>
         <section class="compose">
@@ -49,19 +49,19 @@
                 name="content"
                 rows="6"
                 required
-                placeholder="And to explain more..."
+                placeholder="To add on top of that..."
               ></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Publish</button>
           </form>
         </section>
 
-        <section class="feed">
+        <section class="postfeed">
           <h2 id="">
             <%= posts.length === 1 ? "1 post" : posts.length + " posts" %>
           </h2>
           <% if (posts.length === 0) { %>
-          <p class="emptystate">No posts yet — write the first one above.</p>
+          <p class="emptyspace">No posts yet — Be the first to write one!</p>
           <% } else { %>
           <ul class="postlist">
             <% posts.forEach(function (post) { %>
